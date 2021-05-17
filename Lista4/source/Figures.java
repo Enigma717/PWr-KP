@@ -40,13 +40,16 @@ public interface Figures {
     void addHeight(double h);
 
     /**
-     * Sets values of the figure's parameters (prevents drawing bugs)
-     * @param x1 X coordinate of the starting point
-     * @param y1 Y coordinate of the starting point
-     * @param x2 X coordinate of the ending point
-     * @param y2 Y coordinate of the ending point
+     * Returns width of the figure
+     * @return figure's width
      */
-    void setValues(double x1, double y1, double x2, double y2);
+    double getWidth();
+
+    /**
+     * Returns height of the figure
+     * @return figure's height
+     */
+    double getHeight();
 
     /**
      * Sets color of the figure

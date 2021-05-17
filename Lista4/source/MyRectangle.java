@@ -45,13 +45,16 @@ public class MyRectangle extends Rectangle2D.Double implements Figures {
         this.height += h;
     }
 
-    /** See {@link Figures#setValues(double, double, double, double)} */
+    /** See {@link Figures#getWidth()} */
     @Override
-    public void setValues(double x1, double y1, double x2, double y2) {
-        this.x = Math.min(x1, x2);
-        this.y = Math.min(y1, y2);
-        this.width = Math.abs(x1 - x2);
-        this.height = Math.abs(y1 - y2);
+    public double getWidth() {
+        return this.width;
+    }
+
+    /** See {@link Figures#getHeight()} */
+    @Override
+    public double getHeight() {
+        return this.height;
     }
 
     /** See {@link Figures#setColor(Color)} */
