@@ -1,3 +1,4 @@
+import java.awt.Point;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -21,17 +22,16 @@ public class DrawingPanel extends JPanel {
     /** Creating array list for drawn figures */
     public ArrayList<Figures> figuresList;
 
-
+    /** Gui object */
     public GUI frame;
 
-    public MyRectangle rectangle;
-    public MyEllipse ellipse;
-
-
-    public Figures temp;
-
+    /** Figures objects to handle drawing and selecting */
+    public Figures tempFigure;
     public Figures activeFigure;
     public Figures selectedFigure;
+
+    /** Color menu object */
+    final JColorChooser colorPalette = new JColorChooser(); 
 
     /**
      * DrawingPanel class constructor
@@ -44,6 +44,7 @@ public class DrawingPanel extends JPanel {
         figuresList = new ArrayList<Figures>();
 
         setSize(1280, 720);
+        setBackground(new Color(190, 180, 130));
 
         /** Creating mouse listeners */
         MovingHandler moveHandle = new MovingHandler();
@@ -65,12 +66,18 @@ public class DrawingPanel extends JPanel {
         repaint();
     }
 
+    /**
+     * Drawing preview of the figure while dragging the mouse
+     */
     public void drawPreview(Figures figure) {
 
         activeFigure = figure;
         repaint();
     }
 
+    /**
+     * Drawing an outline around selected figure
+     */
     public void highlightSelected(Figures figure) {
 
         selectedFigure = figure;
@@ -143,7 +150,9 @@ public class DrawingPanel extends JPanel {
         private int x1, x2, clickX;
         private int y1, y2, clickY;
         private int dx, dy;
+        
         private double p1, p2, width, height;
+
         private boolean isSelected;
 
         /**
@@ -157,20 +166,23 @@ public class DrawingPanel extends JPanel {
             
             isSelected = false;
 
-            for(Figures figure : figuresList) { 
-                if(figure.isHit(clickX, clickY)) { 
-                    System.out.println("Figure selected");
-                    isSelected = true;
-                    selectedFigure = figure;
+            if(event.getButton() == MouseEvent.BUTTON1) {
+                for(Figures figure : figuresList) { 
+                    if(figure.isHit(clickX, clickY)) { 
+                        System.out.println("New figure selected");
+                        isSelected = true;
+                        selectedFigure = figure;
                     
-                    highlightSelected(figure);
-                } 
+                        highlightSelected(figure);
+                    } 
+                }
             }
             if(isSelected == false) {
                 selectedFigure = null;
                 repaint();
             }
         }
+
         /** 
          * Mouse pressed events handler
          */
@@ -181,8 +193,24 @@ public class DrawingPanel extends JPanel {
             y1 = event.getY();
 
             if(event.getButton() == MouseEvent.BUTTON3) {
-
-                System.out.println("Siema Eniu - Dubstep Remix");
+                for(Figures figure : figuresList) { 
+                    if(figure.isHit(clickX, clickY) && isSelected == true) { 
+                        selectedFigure = figure;
+                        
+                        Color chosenColor = JColorChooser.showDialog(frame, "Choose figure color", Color.BLACK);  
+                        if (chosenColor != null) {  
+                            selectedFigure.setColor(chosenColor);
+                            repaint();
+                        }
+                    }
+                }
+                if(isSelected == false) {
+                    Color chosenColor = JColorChooser.showDialog(frame, "Choose background color", Color.BLACK);  
+                    if (chosenColor != null) {  
+                        setBackground(chosenColor);
+                        repaint();
+                    }
+                } 
             }
         }
 
@@ -214,9 +242,9 @@ public class DrawingPanel extends JPanel {
                 width = Math.abs(x1 - x2);
                 height = Math.abs(y1 - y2);
 
-                temp = new MyRectangle(p1, p2, width, height);
+                tempFigure = new MyRectangle(p1, p2, width, height);
 
-                drawPreview(temp);
+                drawPreview(tempFigure);
             }
             else if(frame.mode == 2) {
                 p1 = Math.min(x1, x2);
@@ -224,12 +252,14 @@ public class DrawingPanel extends JPanel {
                 width = Math.abs(x1 - x2);
                 height = Math.abs(y1 - y2);
 
-                temp = new MyEllipse(p1, p2, width, height);
+                tempFigure = new MyEllipse(p1, p2, width, height);
 
-                drawPreview(temp);
+                drawPreview(tempFigure);
             }
-            else if(frame.mode == 3) {
-                System.out.println("Siema Eniu");
+            else if(frame.mode == 3) {               
+                tempFigure = new MyTriangle(x1, y1, x2, y2);
+
+                drawPreview(tempFigure);
             }
         }
         
@@ -242,7 +272,6 @@ public class DrawingPanel extends JPanel {
             x2 = event.getX();
             y2 = event.getY();
             
-
             if(frame.mode == 1) {
                 p1 = Math.min(x1, x2);
                 p2 = Math.min(y1, y2);
@@ -263,17 +292,25 @@ public class DrawingPanel extends JPanel {
 
                 repaint();
             }
-            else if(frame.mode == 3) {
-                System.out.println("Siema Eniu");
+            else if(frame.mode == 3) {                
+                addFigure(new MyTriangle(x1, y1, x2, y2));
+
+                repaint();
             }
 
-            temp = null;
+            tempFigure = null;
             activeFigure = null;  
         }
     }
 
+    /**
+     * Handling actions performed by mouse scroll
+     */
     class ScalingHandler implements MouseWheelListener {
         
+        /**
+         * Mouse scroll moved events handler
+         */
         @Override
         public void mouseWheelMoved(MouseWheelEvent event) {
 
@@ -289,9 +326,6 @@ public class DrawingPanel extends JPanel {
                     selectedFigure.addY(-scale / 2.0);
 
                     repaint();
-                }
-                else {
-                    System.out.println("Select a figure first!");
                 }
             }
         }

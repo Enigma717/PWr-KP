@@ -35,6 +35,7 @@ public class MyEllipse extends Ellipse2D.Double implements Figures {
     }
 
     /** See {@link Figures#addWidth(double)} */
+    @Override
     public void addWidth(double w) {
         this.width += w;
     }
@@ -63,6 +64,12 @@ public class MyEllipse extends Ellipse2D.Double implements Figures {
         color = c;
     }
 
+    /** See {@link Figures#setColor(int)} */
+    @Override
+    public void setColor(int c) {
+        color = new Color(c);
+    }
+
     /** See {@link Figures#getColor()} */
     @Override
     public Paint getColor() {
@@ -78,6 +85,6 @@ public class MyEllipse extends Ellipse2D.Double implements Figures {
     /** See {@link Figures#toString()} */
     @Override
     public String toString() {
-        return "Ellipse:" + x + "|" + y + "|" + width + "|" + height + "|" + color.getRGB();
+        return "E:" + x + ":" + y + ":" + width + ":" + height + ":" + color.getRGB();
     }
 }

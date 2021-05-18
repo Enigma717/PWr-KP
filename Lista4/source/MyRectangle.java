@@ -63,6 +63,12 @@ public class MyRectangle extends Rectangle2D.Double implements Figures {
         color = c;
     }
 
+    /** See {@link Figures#setColor(int)} */
+    @Override
+    public void setColor(int c) {
+        color = new Color(c);
+    }
+
     /** See {@link Figures#getColor()} */
     @Override
     public Paint getColor() {
@@ -78,6 +84,6 @@ public class MyRectangle extends Rectangle2D.Double implements Figures {
     /** See {@link Figures#toString()} */
     @Override
     public String toString() {
-        return "Rectangle:" + x + "|" + y + "|" + width + "|" + height + "|" + color.getRGB();
+        return "R:" + x + ":" + y + ":" + width + ":" + height + ":" + color.getRGB();
     }
 }

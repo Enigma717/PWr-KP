@@ -1,0 +1,135 @@
+\hypertarget{classDrawingPanel}{}\doxysection{Drawing\+Panel Class Reference}
+\label{classDrawingPanel}\index{DrawingPanel@{DrawingPanel}}
+
+
+Inheritance diagram for Drawing\+Panel\+:
+% FIG 0
+
+
+Collaboration diagram for Drawing\+Panel\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Moving\+Handler}
+\item 
+class {\bfseries Scaling\+Handler}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDrawingPanel_aa4fb85df042c655a3bbf3df98d76673d}{Drawing\+Panel}} (\mbox{\hyperlink{classGUI}{G\+UI}} gui)
+\item 
+void \mbox{\hyperlink{classDrawingPanel_a3e5736a39930805f70869fd1dce9cb46}{add\+Figure}} (\mbox{\hyperlink{interfaceFigures}{Figures}} figure)
+\item 
+void \mbox{\hyperlink{classDrawingPanel_a842dc8c6db37a841320161a3c77ff077}{draw\+Preview}} (\mbox{\hyperlink{interfaceFigures}{Figures}} figure)
+\item 
+void \mbox{\hyperlink{classDrawingPanel_aedb9e33ed80dd0b12e6fc95a2daaa035}{highlight\+Selected}} (\mbox{\hyperlink{interfaceFigures}{Figures}} figure)
+\item 
+void \mbox{\hyperlink{classDrawingPanel_a94f31c4cf6856ae742da17f00d8b33e4}{paint\+Component}} (Graphics g)
+\item 
+void \mbox{\hyperlink{classDrawingPanel_a1f93e84c097e208f83919dda26fb526f}{drawing}} (Graphics g)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Array\+List$<$ \mbox{\hyperlink{interfaceFigures}{Figures}} $>$ \mbox{\hyperlink{classDrawingPanel_a5d6c8fcf61ec65aefd63d9bbd481dd4e}{figures\+List}}
+\item 
+\mbox{\hyperlink{classGUI}{G\+UI}} \mbox{\hyperlink{classDrawingPanel_affb86b1f3528dc80ec46328151bc495f}{frame}}
+\item 
+\mbox{\hyperlink{interfaceFigures}{Figures}} \mbox{\hyperlink{classDrawingPanel_a78c065f03a93de7e3df9dc3b9f5da848}{temp\+Figure}}
+\item 
+\mbox{\Hypertarget{classDrawingPanel_aedc38732e1a325607fc345b92da32b97}\label{classDrawingPanel_aedc38732e1a325607fc345b92da32b97}} 
+\mbox{\hyperlink{interfaceFigures}{Figures}} {\bfseries active\+Figure}
+\item 
+\mbox{\Hypertarget{classDrawingPanel_a05de28bc7ec3d53173389dc9cfbd30ba}\label{classDrawingPanel_a05de28bc7ec3d53173389dc9cfbd30ba}} 
+\mbox{\hyperlink{interfaceFigures}{Figures}} {\bfseries selected\+Figure}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDrawingPanel}{Drawing\+Panel}} class containing surface user draws on 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDrawingPanel_aa4fb85df042c655a3bbf3df98d76673d}\label{classDrawingPanel_aa4fb85df042c655a3bbf3df98d76673d}} 
+\index{DrawingPanel@{DrawingPanel}!DrawingPanel@{DrawingPanel}}
+\index{DrawingPanel@{DrawingPanel}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{DrawingPanel()}{DrawingPanel()}}
+{\footnotesize\ttfamily Drawing\+Panel.\+Drawing\+Panel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGUI}{G\+UI}}}]{gui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{classDrawingPanel}{Drawing\+Panel}} class constructor Preventing Null\+Pointer\+Exception
+
+Creating mouse listeners
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDrawingPanel_a3e5736a39930805f70869fd1dce9cb46}\label{classDrawingPanel_a3e5736a39930805f70869fd1dce9cb46}} 
+\index{DrawingPanel@{DrawingPanel}!addFigure@{addFigure}}
+\index{addFigure@{addFigure}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{addFigure()}{addFigure()}}
+{\footnotesize\ttfamily void Drawing\+Panel.\+add\+Figure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceFigures}{Figures}}}]{figure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adding figure to the array list 
+\begin{DoxyParams}{Parameters}
+{\em figure} & given figure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDrawingPanel_a1f93e84c097e208f83919dda26fb526f}\label{classDrawingPanel_a1f93e84c097e208f83919dda26fb526f}} 
+\index{DrawingPanel@{DrawingPanel}!drawing@{drawing}}
+\index{drawing@{drawing}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{drawing()}{drawing()}}
+{\footnotesize\ttfamily void Drawing\+Panel.\+drawing (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Drawing figures method Preparing figure outline styles
+
+Enabling anti-\/aliasing
+
+Creating outlines for each state of the figure
+
+Drawing figures from the list
+
+Drawing preview of the figure
+
+Adding border to selected figure\mbox{\Hypertarget{classDrawingPanel_a842dc8c6db37a841320161a3c77ff077}\label{classDrawingPanel_a842dc8c6db37a841320161a3c77ff077}} 
+\index{DrawingPanel@{DrawingPanel}!drawPreview@{drawPreview}}
+\index{drawPreview@{drawPreview}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{drawPreview()}{drawPreview()}}
+{\footnotesize\ttfamily void Drawing\+Panel.\+draw\+Preview (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceFigures}{Figures}}}]{figure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Drawing preview of the figure while dragging the mouse \mbox{\Hypertarget{classDrawingPanel_aedb9e33ed80dd0b12e6fc95a2daaa035}\label{classDrawingPanel_aedb9e33ed80dd0b12e6fc95a2daaa035}} 
+\index{DrawingPanel@{DrawingPanel}!highlightSelected@{highlightSelected}}
+\index{highlightSelected@{highlightSelected}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{highlightSelected()}{highlightSelected()}}
+{\footnotesize\ttfamily void Drawing\+Panel.\+highlight\+Selected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceFigures}{Figures}}}]{figure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Drawing an outline around selected figure \mbox{\Hypertarget{classDrawingPanel_a94f31c4cf6856ae742da17f00d8b33e4}\label{classDrawingPanel_a94f31c4cf6856ae742da17f00d8b33e4}} 
+\index{DrawingPanel@{DrawingPanel}!paintComponent@{paintComponent}}
+\index{paintComponent@{paintComponent}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{paintComponent()}{paintComponent()}}
+{\footnotesize\ttfamily void Drawing\+Panel.\+paint\+Component (\begin{DoxyParamCaption}\item[{Graphics}]{g }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Overriding paint\+Component 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDrawingPanel_a5d6c8fcf61ec65aefd63d9bbd481dd4e}\label{classDrawingPanel_a5d6c8fcf61ec65aefd63d9bbd481dd4e}} 
+\index{DrawingPanel@{DrawingPanel}!figuresList@{figuresList}}
+\index{figuresList@{figuresList}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{figuresList}{figuresList}}
+{\footnotesize\ttfamily Array\+List$<$\mbox{\hyperlink{interfaceFigures}{Figures}}$>$ Drawing\+Panel.\+figures\+List}
+
+Creating array list for drawn figures \mbox{\Hypertarget{classDrawingPanel_affb86b1f3528dc80ec46328151bc495f}\label{classDrawingPanel_affb86b1f3528dc80ec46328151bc495f}} 
+\index{DrawingPanel@{DrawingPanel}!frame@{frame}}
+\index{frame@{frame}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGUI}{G\+UI}} Drawing\+Panel.\+frame}
+
+Gui object \mbox{\Hypertarget{classDrawingPanel_a78c065f03a93de7e3df9dc3b9f5da848}\label{classDrawingPanel_a78c065f03a93de7e3df9dc3b9f5da848}} 
+\index{DrawingPanel@{DrawingPanel}!tempFigure@{tempFigure}}
+\index{tempFigure@{tempFigure}!DrawingPanel@{DrawingPanel}}
+\doxysubsubsection{\texorpdfstring{tempFigure}{tempFigure}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfaceFigures}{Figures}} Drawing\+Panel.\+temp\+Figure}
+
+\mbox{\hyperlink{interfaceFigures}{Figures}} objects to handle drawing and selecting 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drawing\+Panel.\+java\end{DoxyCompactItemize}

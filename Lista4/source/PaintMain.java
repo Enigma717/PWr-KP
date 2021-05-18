@@ -1,5 +1,5 @@
 /**
- * Main class of the app
+ * Main class of the program
  */
 public class PaintMain {
 	

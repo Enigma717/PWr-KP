@@ -58,6 +58,12 @@ public interface Figures {
     void setColor(Color color);
 
     /**
+     * Sets color of the figure (using getRGB() method)
+     * @param color
+     */
+    void setColor(int color);
+
+    /**
      * Returns color of the figure
      * @return figure's color
      */
@@ -70,7 +76,7 @@ public interface Figures {
     Shape returnShape();
 
     /**
-     * Formats figure's parameters for easier file IO management
+     * Formats figure's parameters for file IO management
      * @return string containing figure's parameters
      */
     String toString();
