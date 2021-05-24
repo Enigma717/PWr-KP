@@ -1,0 +1,32 @@
+\hypertarget{classAppFrame}{}\doxysection{App\+Frame Class Reference}
+\label{classAppFrame}\index{AppFrame@{AppFrame}}
+
+
+Inheritance diagram for App\+Frame\+:
+% FIG 0
+
+
+Collaboration diagram for App\+Frame\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAppFrame_a4fd8ce11a4f06127c1a70211e3d57b24}{App\+Frame}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class creating frame for panel 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAppFrame_a4fd8ce11a4f06127c1a70211e3d57b24}\label{classAppFrame_a4fd8ce11a4f06127c1a70211e3d57b24}} 
+\index{AppFrame@{AppFrame}!AppFrame@{AppFrame}}
+\index{AppFrame@{AppFrame}!AppFrame@{AppFrame}}
+\doxysubsubsection{\texorpdfstring{AppFrame()}{AppFrame()}}
+{\footnotesize\ttfamily App\+Frame.\+App\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{classAppFrame}{App\+Frame}} class constructor 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+App\+Frame.\+java\end{DoxyCompactItemize}

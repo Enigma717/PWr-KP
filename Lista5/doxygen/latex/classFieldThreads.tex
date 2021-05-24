@@ -1,0 +1,153 @@
+\hypertarget{classFieldThreads}{}\doxysection{Field\+Threads Class Reference}
+\label{classFieldThreads}\index{FieldThreads@{FieldThreads}}
+
+
+Inheritance diagram for Field\+Threads\+:
+% FIG 0
+
+
+Collaboration diagram for Field\+Threads\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFieldThreads_a6e8dbfe2916c3629292ab14814dd4781}{Field\+Threads}} (int x, int y, int speed, double probability, \mbox{\hyperlink{classGridPanel}{Grid\+Panel}} panel)
+\item 
+void \mbox{\hyperlink{classFieldThreads_a85c293a920527675ec60707fe1bd8aa7}{add\+Neighbours}} (\mbox{\hyperlink{classFieldThreads}{Field\+Threads}}\mbox{[}$\,$\mbox{]} fieldN)
+\item 
+void \mbox{\hyperlink{classFieldThreads_a0b57141cdcfeeb94d55f96f0e9f5a429}{set\+Color}} (Color c)
+\item 
+void \mbox{\hyperlink{classFieldThreads_ab87dc0b452ed45ca967ef3f6242d6259}{set\+Color\+Random}} ()
+\item 
+Color \mbox{\hyperlink{classFieldThreads_a81fa797defb1d997229c62efeae99853}{get\+Color}} ()
+\item 
+Rectangle2\+D.\+Double \mbox{\hyperlink{classFieldThreads_a273d46bbf42ba07854085f9e7f628f0a}{get\+Field}} ()
+\item 
+boolean \mbox{\hyperlink{classFieldThreads_ae4eb8c08353e8cef5ffae860813d1a02}{get\+Active\+State}} ()
+\item 
+void \mbox{\hyperlink{classFieldThreads_a7c505ced18e044f587518e345b6444b4}{toggle\+State}} ()
+\item 
+synchronized void \mbox{\hyperlink{classFieldThreads_a6234be0adc2cc602b7f2bf48b3be4650}{generate\+Average\+Color}} ()
+\item 
+void \mbox{\hyperlink{classFieldThreads_a8b398aec6a708e28b79126443e16caba}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+boolean \mbox{\hyperlink{classFieldThreads_a3d786324169cfa960d53a3581de7a0f7}{field\+State}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class creating fields with threads 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFieldThreads_a6e8dbfe2916c3629292ab14814dd4781}\label{classFieldThreads_a6e8dbfe2916c3629292ab14814dd4781}} 
+\index{FieldThreads@{FieldThreads}!FieldThreads@{FieldThreads}}
+\index{FieldThreads@{FieldThreads}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{FieldThreads()}{FieldThreads()}}
+{\footnotesize\ttfamily Field\+Threads.\+Field\+Threads (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{speed,  }\item[{double}]{probability,  }\item[{\mbox{\hyperlink{classGridPanel}{Grid\+Panel}}}]{panel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\hyperlink{classFieldThreads}{Field\+Threads}} class constructor 
+\begin{DoxyParams}{Parameters}
+{\em x} & x coordinate of the field \\
+\hline
+{\em y} & y coordinate of the field \\
+\hline
+{\em speed} & simulation refreshing speed \\
+\hline
+{\em probability} & simulation color change probability \\
+\hline
+{\em panel} & \mbox{\hyperlink{classGridPanel}{Grid\+Panel}} object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFieldThreads_a85c293a920527675ec60707fe1bd8aa7}\label{classFieldThreads_a85c293a920527675ec60707fe1bd8aa7}} 
+\index{FieldThreads@{FieldThreads}!addNeighbours@{addNeighbours}}
+\index{addNeighbours@{addNeighbours}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{addNeighbours()}{addNeighbours()}}
+{\footnotesize\ttfamily void Field\+Threads.\+add\+Neighbours (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFieldThreads}{Field\+Threads}}\mbox{[}$\,$\mbox{]}}]{fieldN }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds neighbours to array for specified field 
+\begin{DoxyParams}{Parameters}
+{\em fieldN} & array containing neighbours \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFieldThreads_a6234be0adc2cc602b7f2bf48b3be4650}\label{classFieldThreads_a6234be0adc2cc602b7f2bf48b3be4650}} 
+\index{FieldThreads@{FieldThreads}!generateAverageColor@{generateAverageColor}}
+\index{generateAverageColor@{generateAverageColor}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{generateAverageColor()}{generateAverageColor()}}
+{\footnotesize\ttfamily synchronized void Field\+Threads.\+generate\+Average\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Generating average color for the field from surrounding active neighbours neighbour index\+: 0 -\/ west, 1 -\/ north, 2 -\/ east, 3 -\/ south\mbox{\Hypertarget{classFieldThreads_ae4eb8c08353e8cef5ffae860813d1a02}\label{classFieldThreads_ae4eb8c08353e8cef5ffae860813d1a02}} 
+\index{FieldThreads@{FieldThreads}!getActiveState@{getActiveState}}
+\index{getActiveState@{getActiveState}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{getActiveState()}{getActiveState()}}
+{\footnotesize\ttfamily boolean Field\+Threads.\+get\+Active\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns field\textquotesingle{}s state (active or idle) \begin{DoxyReturn}{Returns}
+true (active) or false (idle) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFieldThreads_a81fa797defb1d997229c62efeae99853}\label{classFieldThreads_a81fa797defb1d997229c62efeae99853}} 
+\index{FieldThreads@{FieldThreads}!getColor@{getColor}}
+\index{getColor@{getColor}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily Color Field\+Threads.\+get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns color of the field \begin{DoxyReturn}{Returns}
+field\textquotesingle{}s color 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFieldThreads_a273d46bbf42ba07854085f9e7f628f0a}\label{classFieldThreads_a273d46bbf42ba07854085f9e7f628f0a}} 
+\index{FieldThreads@{FieldThreads}!getField@{getField}}
+\index{getField@{getField}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{getField()}{getField()}}
+{\footnotesize\ttfamily Rectangle2\+D.\+Double Field\+Threads.\+get\+Field (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns field object \begin{DoxyReturn}{Returns}
+the field 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFieldThreads_a8b398aec6a708e28b79126443e16caba}\label{classFieldThreads_a8b398aec6a708e28b79126443e16caba}} 
+\index{FieldThreads@{FieldThreads}!run@{run}}
+\index{run@{run}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Field\+Threads.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Overriding \mbox{\hyperlink{classFieldThreads_a8b398aec6a708e28b79126443e16caba}{run()}} method with instructions calling color setting functions depending on probability \mbox{\Hypertarget{classFieldThreads_a0b57141cdcfeeb94d55f96f0e9f5a429}\label{classFieldThreads_a0b57141cdcfeeb94d55f96f0e9f5a429}} 
+\index{FieldThreads@{FieldThreads}!setColor@{setColor}}
+\index{setColor@{setColor}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Field\+Threads.\+set\+Color (\begin{DoxyParamCaption}\item[{Color}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets color of the field 
+\begin{DoxyParams}{Parameters}
+{\em c} & color to be set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFieldThreads_ab87dc0b452ed45ca967ef3f6242d6259}\label{classFieldThreads_ab87dc0b452ed45ca967ef3f6242d6259}} 
+\index{FieldThreads@{FieldThreads}!setColorRandom@{setColorRandom}}
+\index{setColorRandom@{setColorRandom}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{setColorRandom()}{setColorRandom()}}
+{\footnotesize\ttfamily void Field\+Threads.\+set\+Color\+Random (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Uses \mbox{\hyperlink{classFieldThreads_a0b57141cdcfeeb94d55f96f0e9f5a429}{set\+Color(\+Color)}} method with random color as argument \mbox{\Hypertarget{classFieldThreads_a7c505ced18e044f587518e345b6444b4}\label{classFieldThreads_a7c505ced18e044f587518e345b6444b4}} 
+\index{FieldThreads@{FieldThreads}!toggleState@{toggleState}}
+\index{toggleState@{toggleState}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{toggleState()}{toggleState()}}
+{\footnotesize\ttfamily void Field\+Threads.\+toggle\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Toggles field\textquotesingle{}s state depending on its actual state 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFieldThreads_a3d786324169cfa960d53a3581de7a0f7}\label{classFieldThreads_a3d786324169cfa960d53a3581de7a0f7}} 
+\index{FieldThreads@{FieldThreads}!fieldState@{fieldState}}
+\index{fieldState@{fieldState}!FieldThreads@{FieldThreads}}
+\doxysubsubsection{\texorpdfstring{fieldState}{fieldState}}
+{\footnotesize\ttfamily boolean Field\+Threads.\+field\+State = true}
+
+Active state of the field 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Field\+Threads.\+java\end{DoxyCompactItemize}
