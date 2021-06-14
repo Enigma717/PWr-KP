@@ -1,5 +1,3 @@
-import java.io.FilterOutputStream;
-
 public class BinaryTree<Type extends Comparable<Type>> {
 
     private TreeNode<Type> node;
@@ -90,42 +88,9 @@ public class BinaryTree<Type extends Comparable<Type>> {
     }
 
     private String drawTree(TreeNode<Type> node) {
-        if (node == null) {
-            return "";
+        if(node != null) {
+            return "(" + node.getValue() + ":" + drawTree(node.getLeft()) + ":" + drawTree(node.getRight()) + ")";
         }
-    
-        StringBuilder sb = new StringBuilder();
-        sb.append(node.getValue());
-    
-        String pointerRight = "└──";
-        String pointerLeft = (node.getRight() != null) ? "├──" : "└──";
-    
-        traverseNodes(sb, "", pointerLeft, node.getLeft(), node.getRight() != null);
-        traverseNodes(sb, "", pointerRight, node.getRight(), false);
-    
-        return sb.toString();
-    }
-
-    public void traverseNodes(StringBuilder sb, String padding, String pointer, TreeNode<Type> node, boolean hasRightSibling) {
-        if (node != null) {
-            sb.append("\n");
-            sb.append(padding);
-            sb.append(pointer);
-            sb.append(node.getValue());
-
-            StringBuilder paddingBuilder = new StringBuilder(padding);
-            if (hasRightSibling) {
-                paddingBuilder.append("│  ");
-            } else {
-                paddingBuilder.append("   ");
-            }
-
-            String paddingForBoth = paddingBuilder.toString();
-            String pointerRight = "└──";
-            String pointerLeft = (node.getRight() != null) ? "├──" : "└──";
-
-            traverseNodes(sb, paddingForBoth, pointerLeft, node.getLeft(), node.getRight() != null);
-            traverseNodes(sb, paddingForBoth, pointerRight, node.getRight(), false);
-        }
+        return "()";
     }
 }
